@@ -26,7 +26,7 @@ if (hero) {
   });
 }
 
-const clampPixelRatio = () => Math.min(window.devicePixelRatio || 1, 1.25);
+const clampPixelRatio = () => Math.min(window.devicePixelRatio || 1, 1.5);
 
 async function mountJellyScene() {
   if (!canvas || reduceMotion.matches) return;
@@ -35,8 +35,8 @@ async function mountJellyScene() {
   const scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2(0x031016, 0.045);
 
-  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
-  camera.position.set(0, 0.35, 9);
+  const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 120);
+  camera.position.set(0, 0.24, 10.5);
 
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -53,27 +53,42 @@ async function mountJellyScene() {
   const bellMaterial = new THREE.MeshPhysicalMaterial({
     color: 0x83fff0,
     emissive: 0x1fd8cf,
-    emissiveIntensity: 0.25,
-    roughness: 0.22,
+    emissiveIntensity: 0.42,
+    roughness: 0.18,
     metalness: 0,
-    transmission: 0.6,
-    thickness: 0.82,
+    transmission: 0.76,
+    thickness: 1.08,
     transparent: true,
-    opacity: 0.78,
+    opacity: 0.84,
     side: THREE.DoubleSide,
     clearcoat: 0.65,
     clearcoatRoughness: 0.18,
   });
 
-  const bellGeometry = new THREE.SphereGeometry(2.28, 64, 32, 0, Math.PI * 2, 0, Math.PI * 0.58);
+  const bellGeometry = new THREE.SphereGeometry(2.46, 80, 40, 0, Math.PI * 2, 0, Math.PI * 0.58);
   const bell = new THREE.Mesh(bellGeometry, bellMaterial);
   bell.scale.set(1.35, 0.58, 1);
   bell.rotation.x = Math.PI;
   group.add(bell);
 
+  const bellGlow = new THREE.Mesh(
+    bellGeometry,
+    new THREE.MeshBasicMaterial({
+      color: 0x8ffff8,
+      transparent: true,
+      opacity: 0.28,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+    })
+  );
+  bellGlow.scale.set(1.52, 0.66, 1.12);
+  bellGlow.rotation.copy(bell.rotation);
+  group.add(bellGlow);
+
   const bellWire = new THREE.LineSegments(
     new THREE.WireframeGeometry(bellGeometry),
-    new THREE.LineBasicMaterial({ color: 0xcafffb, transparent: true, opacity: 0.62 })
+    new THREE.LineBasicMaterial({ color: 0xcafffb, transparent: true, opacity: 0.86 })
   );
   bellWire.scale.copy(bell.scale);
   bellWire.rotation.copy(bell.rotation);
@@ -97,14 +112,14 @@ async function mountJellyScene() {
   const tentacleMaterial = new THREE.LineBasicMaterial({
     color: 0x86fff1,
     transparent: true,
-    opacity: 0.82,
+    opacity: 0.95,
   });
   const tentacles = [];
 
-  for (let i = 0; i < 18; i += 1) {
-    const angle = (i / 18) * Math.PI * 2;
+  for (let i = 0; i < 28; i += 1) {
+    const angle = (i / 28) * Math.PI * 2;
     const radius = 1.1 + (i % 5) * 0.09;
-    const length = 3.1 + (i % 6) * 0.36;
+    const length = 3.45 + (i % 7) * 0.42;
     const points = [];
 
     for (let j = 0; j < 22; j += 1) {
@@ -125,14 +140,14 @@ async function mountJellyScene() {
   }
 
   const particleGeometry = new THREE.BufferGeometry();
-  const particleCount = 160;
+  const particleCount = 360;
   const positions = new Float32Array(particleCount * 3);
   const phases = [];
 
   for (let i = 0; i < particleCount; i += 1) {
-    positions[i * 3] = (Math.random() - 0.5) * 13;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 8;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 8;
+    positions[i * 3] = (Math.random() - 0.5) * 16;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 12;
     phases.push(Math.random() * Math.PI * 2);
   }
 
@@ -141,20 +156,23 @@ async function mountJellyScene() {
     particleGeometry,
     new THREE.PointsMaterial({
       color: 0x9ffff5,
-      size: 0.036,
+      size: 0.044,
       transparent: true,
-      opacity: 0.58,
+      opacity: 0.66,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
     })
   );
   scene.add(particles);
 
-  scene.add(new THREE.AmbientLight(0x5edfd7, 0.8));
-  const key = new THREE.PointLight(0x63f2df, 16, 18);
-  key.position.set(0, 2.3, 4.4);
+  scene.add(new THREE.AmbientLight(0x5edfd7, 0.95));
+  const key = new THREE.PointLight(0x63f2df, 22, 20);
+  key.position.set(0.8, 2.5, 4.4);
   scene.add(key);
-  const coral = new THREE.PointLight(0xff706a, 6.5, 12);
+  const violet = new THREE.PointLight(0x9d6cff, 9, 14);
+  violet.position.set(4, 0.2, 1.8);
+  scene.add(violet);
+  const coral = new THREE.PointLight(0xff5f72, 7.5, 12);
   coral.position.set(-3.8, -1.8, 2.2);
   scene.add(coral);
 
@@ -180,9 +198,9 @@ async function mountJellyScene() {
 
     group.rotation.y = Math.sin(time * 0.33) * 0.16 + pointerX * 0.28;
     group.rotation.x = -0.08 + Math.sin(time * 0.27) * 0.05 + pointerY * 0.16;
-    group.position.x = layout.narrow ? 1.55 : 1.15;
-    group.position.y = (layout.narrow ? -2.1 : 0.15) + Math.sin(time * 0.74) * 0.2 - scrollShift * 0.45;
-    group.scale.setScalar((layout.narrow ? 1 : 1.42) + Math.sin(time * 1.15) * 0.025);
+    group.position.x = layout.narrow ? 0.55 : 1.45 - scrollShift * 0.26;
+    group.position.y = (layout.narrow ? -1.15 : 0.08) + Math.sin(time * 0.74) * 0.22 - scrollShift * 0.38;
+    group.scale.setScalar((layout.narrow ? 1.02 : 1.62) + Math.sin(time * 1.15) * 0.032);
     bellWire.material.opacity = 0.58 + Math.sin(time * 1.2) * 0.08;
     core.rotation.y = time * 0.5;
     core.rotation.x = time * 0.32;
@@ -192,7 +210,7 @@ async function mountJellyScene() {
       const attribute = line.geometry.attributes.position;
       for (let j = 0; j < attribute.count; j += 1) {
         const t = j / (attribute.count - 1);
-        const sway = Math.sin(time * 1.5 + phase + t * 4.2) * 0.32 * t;
+        const sway = Math.sin(time * 1.5 + phase + t * 4.2) * 0.34 * t + pointerX * 0.12 * t;
         const x = Math.cos(angle + sway) * radius * (1 - t * 0.3);
         const z = Math.sin(angle + sway) * radius * (1 - t * 0.3);
         const y = -0.24 - t * length + Math.sin(time * 1.1 + index) * 0.05 * t;
@@ -237,14 +255,7 @@ function scheduleJellyScene() {
       });
     };
 
-    window.setTimeout(() => {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(run, { timeout: 2200 });
-        return;
-      }
-
-      run();
-    }, 2200);
+    window.setTimeout(run, 120);
   };
 
   if (document.readyState === "complete") {
