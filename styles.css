@@ -171,6 +171,7 @@ a {
 }
 
 .hero-copy {
+  min-width: 0;
   max-width: 46rem;
 }
 
@@ -234,6 +235,7 @@ p {
 
 .button {
   display: inline-flex;
+  min-width: 0;
   min-height: 3rem;
   align-items: center;
   justify-content: center;
@@ -764,11 +766,13 @@ p {
   }
 
   .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
     margin-top: 1.2rem;
   }
 
   .button {
-    flex: 1 1 10rem;
+    width: 100%;
     padding-inline: 0.8rem;
   }
 
