@@ -7,8 +7,18 @@
       name="description"
       content="Интерактивный сайт о медузах: строение, биолюминесценция, жизненный цикл и роль в океане."
     />
+    <link rel="canonical" href="https://mousemelon.github.io/jellyfish-site/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mousemelon.github.io/jellyfish-site/" />
+    <meta property="og:title" content="Медузы: живой свет океана" />
+    <meta
+      property="og:description"
+      content="Атмосферный одностраничный сайт о строении, жизненном цикле, видах и биолюминесценции медуз."
+    />
+    <meta property="og:image" content="https://mousemelon.github.io/jellyfish-site/assets/social-preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Медузы: живой свет океана</title>
-    <link rel="preconnect" href="https://commons.wikimedia.org" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -37,8 +47,13 @@
         </div>
         <div class="hero-media">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/8/84/Chrysaora_fuscescens%2C_Monterey_Bay_Aquarium_02.jpg"
+            src="./assets/hero-jellyfish-1600.webp"
+            srcset="./assets/hero-jellyfish-900.webp 900w, ./assets/hero-jellyfish-1600.webp 1600w"
+            sizes="(max-width: 640px) 100vw, (max-width: 960px) 92vw, 48vw"
+            width="1600"
+            height="1067"
             alt="Полупрозрачная медуза с длинными щупальцами в синей воде"
+            fetchpriority="high"
           />
         </div>
         <div class="hero-copy">
@@ -137,27 +152,61 @@
         <div class="species-grid">
           <article class="species-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/1/14/Aurelia_aurita_%28aka%29.jpg"
+              src="./assets/aurelia-760.webp"
+              width="760"
+              height="570"
               alt="Ушастая медуза Aurelia aurita с мягким прозрачным куполом"
             />
             <div>
               <h3>Aurelia aurita</h3>
               <p>Ушастая медуза. Часто встречается у берегов, выглядит мягко и почти лунно.</p>
+              <dl class="species-meta">
+                <div>
+                  <dt>Среда</dt>
+                  <dd>прибрежные воды</dd>
+                </div>
+                <div>
+                  <dt>Риск</dt>
+                  <dd>низкий</dd>
+                </div>
+                <div>
+                  <dt>Факт</dt>
+                  <dd>узнаётся по четырём кольцам под куполом</dd>
+                </div>
+              </dl>
             </div>
           </article>
           <article class="species-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/75/Chironex_fleckeri_%28sea_wasp%29.jpg"
+              src="./assets/chironex-760.webp"
+              width="760"
+              height="570"
               alt="Кубомедуза Chironex fleckeri с полупрозрачным телом"
             />
             <div>
               <h3>Chironex fleckeri</h3>
               <p>Морская оса. Один из самых опасных ядовитых организмов океана.</p>
+              <dl class="species-meta">
+                <div>
+                  <dt>Среда</dt>
+                  <dd>тропические воды Австралии и Индо-Тихого океана</dd>
+                </div>
+                <div>
+                  <dt>Риск</dt>
+                  <dd>очень высокий</dd>
+                </div>
+                <div>
+                  <dt>Факт</dt>
+                  <dd>кубомедузы активно ориентируются глазами</dd>
+                </div>
+              </dl>
             </div>
           </article>
           <article class="species-card">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/74/Turritopsis_dohrnii.jpg"
+              src="./assets/turritopsis-760.webp"
+              width="760"
+              height="570"
               alt="Маленькая прозрачная медуза Turritopsis dohrnii"
             />
             <div>
@@ -166,6 +215,20 @@
                 При стрессе может вернуться к стадии полипа. Это не буквальное
                 бессмертие: в природе её всё равно съедают, травмируют и заражают.
               </p>
+              <dl class="species-meta">
+                <div>
+                  <dt>Размер</dt>
+                  <dd>около нескольких миллиметров</dd>
+                </div>
+                <div>
+                  <dt>Риск</dt>
+                  <dd>низкий</dd>
+                </div>
+                <div>
+                  <dt>Факт</dt>
+                  <dd>может перезапускать жизненный цикл в лабораторных условиях</dd>
+                </div>
+              </dl>
             </div>
           </article>
         </div>
