@@ -159,8 +159,8 @@ a {
   position: relative;
   --drift-x: 0px;
   --drift-y: 0px;
-  min-height: 100svh;
-  padding: clamp(6rem, 9vw, 8rem) clamp(1rem, 5vw, 5rem) 4rem;
+  min-height: 92svh;
+  padding: clamp(6rem, 8vw, 7.25rem) clamp(1rem, 5vw, 5rem) 3.25rem;
   overflow: hidden;
   isolation: isolate;
 }
@@ -380,9 +380,9 @@ a {
   z-index: 12;
   display: grid;
   align-content: end;
-  max-width: 48rem;
-  min-height: calc(100svh - clamp(10rem, 14vw, 13rem));
-  padding-top: 20vh;
+  max-width: 36rem;
+  min-height: calc(92svh - clamp(9rem, 13vw, 12rem));
+  padding-top: 14vh;
 }
 
 .eyebrow {
@@ -407,11 +407,11 @@ h2 {
 }
 
 h1 {
-  max-width: 9.6ch;
-  margin-bottom: 1.3rem;
-  font-size: clamp(4.6rem, 10vw, 10.5rem);
+  max-width: 11.5ch;
+  margin-bottom: 0.95rem;
+  font-size: clamp(3rem, 5.4vw, 5.45rem);
   font-weight: 950;
-  line-height: 0.84;
+  line-height: 0.96;
   letter-spacing: 0;
 }
 
@@ -436,16 +436,16 @@ p {
 }
 
 .hero-copy > p:not(.eyebrow) {
-  max-width: 42rem;
+  max-width: 34rem;
   color: var(--soft);
-  font-size: clamp(1.02rem, 1.4vw, 1.28rem);
+  font-size: clamp(0.96rem, 0.96vw, 1.06rem);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-top: 1.8rem;
+  margin-top: 1.35rem;
 }
 
 .button {
@@ -497,7 +497,7 @@ p {
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: -1px clamp(1rem, 5vw, 5rem) 0;
+  margin: 0 clamp(1rem, 5vw, 5rem);
   border: 1px solid var(--line);
   border-radius: 1rem;
   background: rgba(4, 16, 23, 0.64);
@@ -506,8 +506,8 @@ p {
 }
 
 .fact-strip article {
-  min-height: 9rem;
-  padding: clamp(1rem, 3vw, 2rem);
+  min-height: 5.45rem;
+  padding: clamp(0.75rem, 1.7vw, 1rem);
   border-right: 1px solid var(--line);
 }
 
@@ -518,13 +518,15 @@ p {
 .fact-strip strong {
   display: block;
   color: var(--amber);
-  font-size: clamp(2.25rem, 4.6vw, 4.6rem);
+  font-size: clamp(1.55rem, 2.35vw, 2.45rem);
   font-weight: 950;
   line-height: 0.95;
 }
 
 .fact-strip span {
   color: var(--soft);
+  font-size: 0.86rem;
+  line-height: 1.35;
 }
 
 .split-section,
@@ -1141,8 +1143,8 @@ p {
   }
 
   .hero-copy {
-    min-height: calc(100svh - 10rem);
-    padding-top: 32vh;
+    min-height: calc(100svh - 10.5rem);
+    padding-top: 30vh;
   }
 
   .hero-media::before {
@@ -1152,10 +1154,10 @@ p {
   }
 
   h1 {
-    max-width: 9ch;
-    margin-bottom: 0.95rem;
-    font-size: clamp(3.15rem, 14vw, 4.8rem);
-    line-height: 0.9;
+    max-width: 10.7ch;
+    margin-bottom: 0.8rem;
+    font-size: clamp(2.35rem, 10vw, 3.35rem);
+    line-height: 1;
   }
 
   h2 {
@@ -1165,13 +1167,14 @@ p {
 
   .hero-copy > p:not(.eyebrow) {
     max-width: none;
-    font-size: 0.98rem;
+    font-size: 0.94rem;
     line-height: 1.52;
   }
 
   .hero-actions {
     display: grid;
     grid-template-columns: 1fr;
+    max-width: 22rem;
     margin-top: 1.15rem;
   }
 
@@ -1183,7 +1186,7 @@ p {
   }
 
   .button {
-    width: 100%;
+    width: auto;
     padding-inline: 0.8rem;
   }
 
@@ -1196,10 +1199,12 @@ p {
 
   .fact-strip {
     margin-inline: 1rem;
+    border-radius: 0.75rem;
   }
 
   .fact-strip article {
     min-height: auto;
+    padding: 0.78rem 0.9rem;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
