@@ -59,7 +59,7 @@ async function mountJellyScene() {
     transmission: 0.6,
     thickness: 0.82,
     transparent: true,
-    opacity: 0.62,
+    opacity: 0.78,
     side: THREE.DoubleSide,
     clearcoat: 0.65,
     clearcoatRoughness: 0.18,
@@ -73,7 +73,7 @@ async function mountJellyScene() {
 
   const bellWire = new THREE.LineSegments(
     new THREE.WireframeGeometry(bellGeometry),
-    new THREE.LineBasicMaterial({ color: 0xa9fff7, transparent: true, opacity: 0.26 })
+    new THREE.LineBasicMaterial({ color: 0xcafffb, transparent: true, opacity: 0.62 })
   );
   bellWire.scale.copy(bell.scale);
   bellWire.rotation.copy(bell.rotation);
@@ -81,7 +81,7 @@ async function mountJellyScene() {
 
   const rim = new THREE.Mesh(
     new THREE.TorusGeometry(2.95, 0.028, 12, 160),
-    new THREE.MeshBasicMaterial({ color: 0x77fff1, transparent: true, opacity: 0.78 })
+    new THREE.MeshBasicMaterial({ color: 0x77fff1, transparent: true, opacity: 0.95 })
   );
   rim.scale.y = 0.34;
   rim.position.y = -0.08;
@@ -89,7 +89,7 @@ async function mountJellyScene() {
 
   const core = new THREE.Mesh(
     new THREE.IcosahedronGeometry(0.74, 3),
-    new THREE.MeshBasicMaterial({ color: 0xff8179, transparent: true, opacity: 0.58, wireframe: true })
+    new THREE.MeshBasicMaterial({ color: 0xff8179, transparent: true, opacity: 0.72, wireframe: true })
   );
   core.position.set(0, -0.35, 0.08);
   group.add(core);
@@ -97,7 +97,7 @@ async function mountJellyScene() {
   const tentacleMaterial = new THREE.LineBasicMaterial({
     color: 0x86fff1,
     transparent: true,
-    opacity: 0.58,
+    opacity: 0.82,
   });
   const tentacles = [];
 
@@ -118,7 +118,7 @@ async function mountJellyScene() {
 
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
     const line = new THREE.Line(geometry, tentacleMaterial.clone());
-    line.material.opacity = 0.28 + (i % 4) * 0.1;
+    line.material.opacity = 0.42 + (i % 4) * 0.12;
     line.userData = { angle, radius, length, phase: i * 0.58 };
     tentacles.push(line);
     group.add(line);
@@ -180,10 +180,10 @@ async function mountJellyScene() {
 
     group.rotation.y = Math.sin(time * 0.33) * 0.16 + pointerX * 0.28;
     group.rotation.x = -0.08 + Math.sin(time * 0.27) * 0.05 + pointerY * 0.16;
-    group.position.x = layout.narrow ? 1.55 : 2.45;
+    group.position.x = layout.narrow ? 1.55 : 1.15;
     group.position.y = (layout.narrow ? -2.1 : 0.15) + Math.sin(time * 0.74) * 0.2 - scrollShift * 0.45;
     group.scale.setScalar((layout.narrow ? 1 : 1.42) + Math.sin(time * 1.15) * 0.025);
-    bellWire.material.opacity = 0.22 + Math.sin(time * 1.2) * 0.04;
+    bellWire.material.opacity = 0.58 + Math.sin(time * 1.2) * 0.08;
     core.rotation.y = time * 0.5;
     core.rotation.x = time * 0.32;
 
