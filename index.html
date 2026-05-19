@@ -46,14 +46,20 @@
           <span class="drifter drifter-c"></span>
         </div>
         <div class="hero-media">
+          <canvas class="jelly-canvas" aria-hidden="true"></canvas>
+          <div class="hero-depth" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
           <img
             src="./assets/hero-jellyfish-1600.webp"
             srcset="./assets/hero-jellyfish-900.webp 900w, ./assets/hero-jellyfish-1600.webp 1600w"
             sizes="(max-width: 640px) 100vw, (max-width: 960px) 92vw, 48vw"
             width="1600"
             height="1067"
-            alt="Полупрозрачная медуза с длинными щупальцами в синей воде"
-            fetchpriority="high"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
         </div>
         <div class="hero-copy">
@@ -71,7 +77,7 @@
         </div>
       </section>
 
-      <section class="fact-strip" aria-label="Короткие факты о медузах">
+      <section class="fact-strip reveal" aria-label="Короткие факты о медузах">
         <article>
           <strong>95%</strong>
           <span>тела медузы — вода</span>
@@ -90,7 +96,7 @@
         </article>
       </section>
 
-      <section id="anatomy" class="split-section" aria-labelledby="anatomy-title">
+      <section id="anatomy" class="split-section reveal parallax-band" aria-labelledby="anatomy-title">
         <div class="section-copy">
           <p class="eyebrow">Анатомия</p>
           <h2 id="anatomy-title">Минимальный организм, максимальный эффект</h2>
@@ -115,7 +121,7 @@
         </div>
       </section>
 
-      <section id="life" class="life-section" aria-labelledby="life-title">
+      <section id="life" class="life-section reveal parallax-band" aria-labelledby="life-title">
         <div class="section-heading">
           <p class="eyebrow">Жизненный цикл</p>
           <h2 id="life-title">Медуза — это только одна стадия</h2>
@@ -144,7 +150,7 @@
         </div>
       </section>
 
-      <section id="species" class="species-section" aria-labelledby="species-title">
+      <section id="species" class="species-section reveal parallax-band" aria-labelledby="species-title">
         <div class="section-heading">
           <p class="eyebrow">Виды</p>
           <h2 id="species-title">Не все медузы одинаково спокойны</h2>
@@ -235,7 +241,7 @@
         </div>
       </section>
 
-      <section id="myths" class="myths-section" aria-labelledby="myths-title">
+      <section id="myths" class="myths-section reveal parallax-band" aria-labelledby="myths-title">
         <div class="section-heading">
           <p class="eyebrow">Мифы и факты</p>
           <h2 id="myths-title">Где магия заканчивается и начинается биология</h2>
@@ -276,7 +282,7 @@
         </div>
       </section>
 
-      <section id="signals" class="signals-section" aria-labelledby="signals-title">
+      <section id="signals" class="signals-section reveal parallax-band" aria-labelledby="signals-title">
         <div class="section-copy">
           <p class="eyebrow">Биолюминесценция</p>
           <h2 id="signals-title">Свет как язык выживания</h2>
@@ -292,7 +298,7 @@
         </div>
       </section>
 
-      <section class="sources-section" aria-labelledby="sources-title">
+      <section class="sources-section reveal" aria-labelledby="sources-title">
         <div class="section-heading">
           <p class="eyebrow">Источники</p>
           <h2 id="sources-title">На чём держатся факты</h2>
@@ -332,6 +338,6 @@
       <a href="#hero">Наверх</a>
     </footer>
 
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>
