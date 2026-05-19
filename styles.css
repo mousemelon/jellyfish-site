@@ -338,7 +338,9 @@ p {
 .split-section,
 .signals-section,
 .life-section,
-.species-section {
+.species-section,
+.myths-section,
+.sources-section {
   padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 5vw, 5rem);
 }
 
@@ -462,20 +464,23 @@ p {
 }
 
 .timeline,
-.species-grid {
+.species-grid,
+.myths-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
 .timeline article,
-.species-card {
+.species-card,
+.myths-grid article {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.035);
   box-shadow: 0 12px 42px rgba(0, 0, 0, 0.18);
 }
 
-.timeline article {
+.timeline article,
+.myths-grid article {
   min-height: 15rem;
   padding: 1.3rem;
   border-radius: 0.65rem;
@@ -496,6 +501,10 @@ p {
 
 .species-grid {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.myths-grid {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .species-card {
@@ -559,6 +568,39 @@ p {
   background: var(--violet);
   box-shadow: 0 0 32px var(--violet);
   animation-delay: -1.8s;
+}
+
+.sources-section {
+  padding-top: 0;
+}
+
+.source-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.8rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.source-list li {
+  min-height: 8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.source-list a {
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  padding: 1rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.source-list a:hover {
+  color: var(--glow);
 }
 
 .site-footer {
@@ -632,7 +674,9 @@ p {
 
   .fact-strip,
   .timeline,
-  .species-grid {
+  .species-grid,
+  .myths-grid,
+  .source-list {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -668,7 +712,9 @@ p {
 
   .fact-strip,
   .timeline,
-  .species-grid {
+  .species-grid,
+  .myths-grid,
+  .source-list {
     grid-template-columns: 1fr;
   }
 
