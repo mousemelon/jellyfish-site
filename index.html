@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Интерактивный сайт о медузах: строение, биолюминесценция, жизненный цикл и роль в океане."
+    />
+    <title>Медузы: живой свет океана</title>
+    <link rel="preconnect" href="https://commons.wikimedia.org" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+    <header class="site-header" aria-label="Основная навигация">
+      <a class="brand" href="#hero" aria-label="Медузы: начало страницы">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Medusae</span>
+      </a>
+      <nav class="nav">
+        <a href="#anatomy">Строение</a>
+        <a href="#life">Цикл</a>
+        <a href="#species">Виды</a>
+        <a href="#signals">Сигналы</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero-backdrop" aria-hidden="true">
+          <span class="drifter drifter-a"></span>
+          <span class="drifter drifter-b"></span>
+          <span class="drifter drifter-c"></span>
+        </div>
+        <div class="hero-media">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/8/84/Chrysaora_fuscescens%2C_Monterey_Bay_Aquarium_02.jpg"
+            alt="Полупрозрачная медуза с длинными щупальцами в синей воде"
+          />
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">650 миллионов лет эволюции</p>
+          <h1 id="hero-title">Медузы — живой свет океана</h1>
+          <p>
+            У них нет мозга, костей и сердца, но они пережили динозавров,
+            научились светиться, парализовать добычу и превращать простую воду
+            в почти инопланетную хореографию.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#anatomy">Изучить организм</a>
+            <a class="button secondary" href="#species">Смотреть виды</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="fact-strip" aria-label="Короткие факты о медузах">
+        <article>
+          <strong>95%</strong>
+          <span>тела медузы — вода</span>
+        </article>
+        <article>
+          <strong>0</strong>
+          <span>мозга, но есть нервная сеть</span>
+        </article>
+        <article>
+          <strong>24+</strong>
+          <span>глаза у кубомедуз</span>
+        </article>
+        <article>
+          <strong>∞</strong>
+          <span>условная регенерация у Turritopsis</span>
+        </article>
+      </section>
+
+      <section id="anatomy" class="split-section" aria-labelledby="anatomy-title">
+        <div class="section-copy">
+          <p class="eyebrow">Анатомия</p>
+          <h2 id="anatomy-title">Минимальный организм, максимальный эффект</h2>
+          <p>
+            Медуза устроена как зонтик из желеобразной мезоглеи. Она сокращает
+            купол, выталкивает воду и движется реактивным способом. По краям
+            купола расположены щупальца с нематоцистами — микроскопическими
+            капсулами, которые выстреливают быстрее моргания.
+          </p>
+        </div>
+        <div class="anatomy-panel" aria-label="Схема строения медузы">
+          <div class="jelly-diagram">
+            <span class="label bell">купол</span>
+            <span class="label mouth">ротовые лопасти</span>
+            <span class="label sting">стрекательные клетки</span>
+            <div class="diagram-bell"></div>
+            <div class="diagram-core"></div>
+            <div class="tentacles" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="life" class="life-section" aria-labelledby="life-title">
+        <div class="section-heading">
+          <p class="eyebrow">Жизненный цикл</p>
+          <h2 id="life-title">Медуза — это только одна стадия</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <span>01</span>
+            <h3>Планула</h3>
+            <p>Личинка плывёт в толще воды, пока не найдёт поверхность.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Полип</h3>
+            <p>Прикрепляется к дну и может размножаться бесполым способом.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Эфира</h3>
+            <p>Молодая медуза отделяется от полипа и начинает свободно плавать.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Медуза</h3>
+            <p>Взрослая форма охотится, размножается и уходит в течение течений.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="species" class="species-section" aria-labelledby="species-title">
+        <div class="section-heading">
+          <p class="eyebrow">Виды</p>
+          <h2 id="species-title">Не все медузы одинаково спокойны</h2>
+        </div>
+        <div class="species-grid">
+          <article class="species-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/14/Aurelia_aurita_%28aka%29.jpg"
+              alt="Ушастая медуза Aurelia aurita с мягким прозрачным куполом"
+            />
+            <div>
+              <h3>Aurelia aurita</h3>
+              <p>Ушастая медуза. Часто встречается у берегов, выглядит мягко и почти лунно.</p>
+            </div>
+          </article>
+          <article class="species-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/75/Chironex_fleckeri_%28sea_wasp%29.jpg"
+              alt="Кубомедуза Chironex fleckeri с полупрозрачным телом"
+            />
+            <div>
+              <h3>Chironex fleckeri</h3>
+              <p>Морская оса. Один из самых опасных ядовитых организмов океана.</p>
+            </div>
+          </article>
+          <article class="species-card">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/74/Turritopsis_dohrnii.jpg"
+              alt="Маленькая прозрачная медуза Turritopsis dohrnii"
+            />
+            <div>
+              <h3>Turritopsis dohrnii</h3>
+              <p>Известна способностью возвращаться к стадии полипа при стрессе.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="signals" class="signals-section" aria-labelledby="signals-title">
+        <div class="section-copy">
+          <p class="eyebrow">Биолюминесценция</p>
+          <h2 id="signals-title">Свет как язык выживания</h2>
+          <p>
+            Некоторые медузы светятся не ради красоты. Свет помогает отпугнуть
+            хищника, сбить его с траектории или привлечь чужое внимание к атакующему.
+            Для науки медузы тоже стали важны: зелёный флуоресцентный белок GFP
+            изменил клеточную биологию.
+          </p>
+        </div>
+        <div class="signal-orbit" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Сайт-эксперимент о медузах. Изображения: Wikimedia Commons.</p>
+      <a href="#hero">Наверх</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
