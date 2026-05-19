@@ -8,4 +8,9 @@ if (hero) {
     hero.style.setProperty("--drift-x", `${x}px`);
     hero.style.setProperty("--drift-y", `${y}px`);
   });
+
+  hero.addEventListener("pointerleave", () => {
+    hero.style.setProperty("--drift-x", "0px");
+    hero.style.setProperty("--drift-y", "0px");
+  });
 }

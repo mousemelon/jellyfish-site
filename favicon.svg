@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Medusae">
+  <rect width="64" height="64" rx="14" fill="#031016"/>
+  <path d="M16 31c2-12 10-18 16-18s14 6 16 18c-7 4-25 4-32 0z" fill="#63f2df" opacity=".86"/>
+  <path d="M22 34c0 9-5 10-5 17M30 35c0 10-3 11-3 18M38 35c0 10 3 11 3 18M46 34c0 9 5 10 5 17" fill="none" stroke="#9d82ff" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="39" cy="23" r="5" fill="#ff706a" opacity=".65"/>
+</svg>
